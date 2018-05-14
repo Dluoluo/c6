@@ -5,6 +5,9 @@ var mySwiper = new Swiper('.content-swiper', {
     loop: false,
     //渐隐渐现
     slide: 'fade',
+    mousewheel: true,
+    followFinger: false,
+    speed: 800,
     // 如果需要分页器
     pagination: {
         el: '.pagination',
@@ -18,6 +21,23 @@ var mySwiper = new Swiper('.content-swiper', {
     navigation: {
         nextEl: '.swiper-button-next'
     },
+    on: {
+        init: function (swiper) {
+            console.log(this.slides.eq(0));
+            slide = this.slides.eq(0);
+            slide.addClass('ani-slide');
+        },
+        transitionStart: function () {
+            for (i = 0; i < this.slides.length; i++) {
+                slide = this.slides.eq(i);
+                slide.removeClass('ani-slide');
+            }
+        },
+        transitionEnd: function () {
+            slide = this.slides.eq(this.activeIndex);
+            slide.addClass('ani-slide');
+        },
+    }
 })   
 var myPriceSwiper = new Swiper('.price-table-content', {
     //竖向轮播
