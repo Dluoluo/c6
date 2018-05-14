@@ -261,6 +261,7 @@ header{
 .concept-icon:hover{
     border: 3px solid #1f4558;
 }
+
 /* 驾享齐趣 */
 .drive{
     background: url(../img/drive-bg.png)no-repeat;
@@ -284,4 +285,32 @@ header{
 .ani-slide .concept-title,.ani-slide .drive-title,.ani-slide .seat-title{
     transform: translate3d(0,0,0.01px);
     opacity: 1;
+}
+
+/* 精彩赏鉴 */
+.video{
+    background: url(../img/video-bg.png)no-repeat;
+    background-size: 100% 100%;
+}
+.video-title{
+    position: absolute;
+    width: 11.73%;
+    height: 7.55%;
+    top:17.29%;
+    right:17.23%;
+    background: url(../img/video-titile.png)no-repeat;
+    background-size: 100% 100%;
+    transform: translateX(50px) translateZ(0.01px);
+    opacity: 0;
+    transition: all 0.8s;
+}
+.ani-slide .video-title{
+    transform: translateX(0px) translateZ(0.01px);
+    opacity:1;
+}
+.video embed{
+    width: 47.54%;
+    height: 71.57%;
+    margin-top: 5%;
+    margin-left:19.09%;
 }
