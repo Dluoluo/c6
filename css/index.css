@@ -129,6 +129,7 @@ header{
     opacity: 0;
     transition: all 0.8s;
 }
+/* 动画 */
 .ani-slide .home-title,.ani-slide .home-p{
     transform: translateX(0px) translateZ(0.01px);
     opacity: 1;
@@ -144,9 +145,6 @@ header{
     width: 72.06%;
     margin-top: 8.15%;
     margin-left: 5.94%;
-}
-.comfortable-img img{
-    cursor: pointer;
 }
 .comfortable-img img:nth-of-type(1){
     margin-left: 7.21%;
@@ -169,4 +167,18 @@ header{
 }
 .comfortable-img img:nth-of-type(10){
     width: 19.58%;
+}
+.comfortable-img img{
+    cursor: pointer;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.8s;
+}
+/* 动画 */
+.ani-slide .comfortable-img img{
+    transform: scale(1);
+    opacity: 1;
+}
+.comfortable-img img:hover{
+    transform:scale(0.8) rotateY(180deg) rotateZ(0.01deg) ;
 }
