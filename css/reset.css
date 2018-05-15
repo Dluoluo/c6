@@ -50,3 +50,7 @@ table {
 a{
 	text-decoration: none;
 }
+input, button, select, textarea {
+	outline: none;
+	border-radius: 0;
+}

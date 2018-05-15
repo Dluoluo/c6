@@ -37,8 +37,18 @@ var mySwiper = new Swiper('.content-swiper', {
             slide = this.slides.eq(this.activeIndex);
             slide.addClass('ani-slide');
         },
+        slideChange: function () {
+            var ospan = document.querySelector('.button-next-span');
+            if (this.isEnd) {
+                this.navigation.$nextEl.css('opacity', '0');
+                ospan.style.opacity='0';
+            } else {
+                this.navigation.$nextEl.css('opacity', '1');
+                ospan.style.opacity = '1';
+            }
+        },
     }
-})   
+})
 var myPriceSwiper = new Swiper('.price-table-content', {
     //竖向轮播
     direction: 'vertical',
