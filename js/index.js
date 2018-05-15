@@ -11,10 +11,12 @@ var mySwiper = new Swiper('.content-swiper', {
     // 如果需要分页器
     pagination: {
         el: '.pagination',
-        //自定义分页器
-        type: 'custom',
         //点击分页器效果
-        clickable: true
+        clickable: true,
+        renderBullet: function (index, className) {
+            var el = '<span class="' + className + '" style="background: url(./img/pagination-'+(index+1)+'.png) no-repeat;background-size: 200% 100%;"></span>';
+            return el;
+        }
     },
 
     // 如果需要前进后退按钮
@@ -23,7 +25,6 @@ var mySwiper = new Swiper('.content-swiper', {
     },
     on: {
         init: function (swiper) {
-            console.log(this.slides.eq(0));
             slide = this.slides.eq(0);
             slide.addClass('ani-slide');
         },
@@ -41,7 +42,7 @@ var mySwiper = new Swiper('.content-swiper', {
             var ospan = document.querySelector('.button-next-span');
             if (this.isEnd) {
                 this.navigation.$nextEl.css('opacity', '0');
-                ospan.style.opacity='0';
+                ospan.style.opacity = '0';
             } else {
                 this.navigation.$nextEl.css('opacity', '1');
                 ospan.style.opacity = '1';
