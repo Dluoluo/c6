@@ -5,7 +5,7 @@ var mySwiper = new Swiper('.content-swiper', {
     loop: false,
     //渐隐渐现
     slide: 'fade',
-    mousewheel: true,
+    // mousewheel: true,
     followFinger: false,
     speed: 800,
     // 如果需要分页器
@@ -51,23 +51,37 @@ var mySwiper = new Swiper('.content-swiper', {
     }
 })
 var myPriceSwiper = new Swiper('.price-table-content', {
-    //竖向轮播
     direction: 'vertical',
     //不循环轮播
     loop: false,
-    //渐隐渐现
-    slide: 'fade',
+    //滚动条滚动
+    mousewheel: true,
     // 如果需要分页器
+    speed: 400,
+    slidesPerView: 'auto',
     pagination: {
         el: '.price-pagination',
-        //自定义分页器
-        type: 'custom',
         //点击分页器效果
-        clickable: true
+        clickable: true,
+        renderBullet: function (index, className) {
+            switch (index) {
+                case 0: text = '技术参数'; break;
+                case 1: text = '舒适'; break;
+                case 2: text = '外观'; break;
+                case 3: text = '内饰'; break;
+                case 4: text = '安全科技'; break;
+                case 4: text = '音响/娱乐'; break;
+            }
+            return '<span class="' + className + '">' + text + '</span>'
+            }
     },
 
     // 如果需要滚动条
     scrollbar: {
         el: '.price-scrollbar',
+        //是否允许拖动滚动条
+        draggable: true,
+        
     },
-})      
+})  
+myPriceSwiper.scrollbar.$dragEl.css('background', '#1f4558');  

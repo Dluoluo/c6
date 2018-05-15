@@ -10,7 +10,7 @@ body{
     flex-direction: column;
 }
 /* 公共样式 */
-.home,.comfortable,.history,.concept,.drive,.seat,.video,.signup{
+.home,.comfortable,.history,.concept,.drive,.seat,.video,.signup,.price{
     width: 100%;
     height: 100%;
     position: relative;
@@ -95,12 +95,12 @@ header{
 .swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{
     margin: 0;
 }
-.pagination  span{
+.pagination span{
     display: block;
     width: 100%;
     height: 9%;
     border-radius: 0;
-    transition-delay:0.6s;
+    transition-delay:0.5s;
     border-bottom: 1px solid rgba(255,255,255,0.15);
     opacity: 1;
 }
@@ -109,7 +109,7 @@ header{
     bottom: 0;
     background: #252222;
 }
-.swiper-pagination-bullet-active{
+.pagination>.swiper-pagination-bullet-active{
     background-position-x: 100% !important;
 }
 .button-next-span{
@@ -124,9 +124,9 @@ header{
     transition: 1s;
     transition-delay:1.5s;
 }
-/* 在过渡效果开始前等待0.3s */
-.swiper-wrapper{
-    transition-delay:0.6s;
+/* 在过渡效果开始前等待0.6s */
+.content-wrapper{
+    transition-delay:0.5s;
 }
 .content{
     flex: 1;
@@ -348,10 +348,99 @@ header{
     top:12.52%;
     left:20.28%;
 }
+
+/* 配置价格 */
+.price{
+    background: url(../img/price-bg.png)no-repeat;
+    background-size: 100% 100%;
+}
+.price-title{
+    width: 12.48%;
+    height: 6.36%;
+    background: url(../img/price-title.png)no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 7.95%;
+    left:50%;
+    margin-left: -6.24%;
+    transition: all 0.8s;
+    transform: translate3d(0,-30px,0.01px);
+    opacity: 0;
+}
+.ani-slide .price-title{
+    transform: translate3d(0,0,0);
+    opacity: 1;
+}
+.price-table{
+    position: absolute;
+    width: 66.86%;
+    height: 68.78%;
+    top:17.49%;
+    left: 50%;
+    margin-left: -34.39%;
+}
+.price-table-header{
+    position: relative;
+    width: 100%;
+    height: 25.43%;
+    background: url(../img/price-table-header.png)no-repeat;
+    background-size: 100% 100%;
+    z-index: 2;
+}
+.price-table-content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-right: 2%;
+    box-sizing: unset;
+}
+.price-table-content .swiper-wrapper{
+    height: 74.57%;
+}
+.price-table-content .swiper-scrollbar{
+    background: #e5e5e5;
+    transition-duration: 0ms;
+}
+.price-table-pages1{
+    width: 100%;
+    height: 100%;
+    background: url(../img/price-table-page1.png)no-repeat;
+    background-size: 100% 100%;
+}
+.price-table-pages2,.price-table-pages3,.price-table-pages4,.price-table-pages5,.price-table-pages6{
+    width: 100%;
+    height: 100%;
+    background: url(../img/price-table-page2.png)no-repeat;
+    background-size: 100% 100%;
+}
+.price-pagination{
+    position: absolute;
+    top:1%;
+    right: -11%;
+    height: 200px;
+}
+.price-pagination span{
+    display: block;
+    width: 100%;
+    height: 15%;
+    background: url(../img/price-pagination-2.png)no-repeat left center;
+    margin-top: 2%;
+    font-size: 14px;
+    opacity: 1;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    padding: 7px 0 0 15px;
+    text-align: left;
+}
+.price-pagination .swiper-pagination-bullet-active{
+    background: url(../img/price-pagination-1.png)no-repeat left center;
+    color: #1f4558;
+}
 /* 报名试驾 */
 .signup{
     font-size: 0;
-    background: url(../img/signup-bg.png)no-repeat;
+    background:url(../img/signup-bg.png)no-repeat;
     background-size: 100% 100%;
 }
 /* 报名试驾动画 */
@@ -364,7 +453,7 @@ header{
     top:16.3%;
     left:50%;
     margin-left: -5.72%;
-     transform: translateY(-50px) translateZ(0.01px);
+     transform: translateY(-30px) translateZ(0.01px);
     opacity: 0;
     transition: all 0.8s;
 }
