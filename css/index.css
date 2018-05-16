@@ -360,6 +360,8 @@ header{
 }
 .concept-detailed-text{
     width: 15.65%;
+    transition: all 0.5s;
+    opacity: 0;
 }
 .concept-detailed img{
     vertical-align: middle;

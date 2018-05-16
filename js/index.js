@@ -1,3 +1,4 @@
+// content轮播
 var mySwiper = new Swiper('.content-swiper', {
     //竖向轮播
     direction: 'vertical',
@@ -51,6 +52,7 @@ var mySwiper = new Swiper('.content-swiper', {
         },
     }
 })
+// 配置轮播
 var myPriceSwiper = new Swiper('.price-table-content', {
     direction: 'vertical',
     //不循环轮播
@@ -86,7 +88,7 @@ var myPriceSwiper = new Swiper('.price-table-content', {
     },
 })  
 myPriceSwiper.scrollbar.$dragEl.css('background', '#1f4558'); 
-
+//百年传承轮播
 var myHistorySwiper = new Swiper('.history-swiper', {
     // 横向
     direction: 'horizontal',
@@ -114,3 +116,22 @@ var myHistorySwiper = new Swiper('.history-swiper', {
         },
     }
 })   
+
+function block() {
+    var aIcon = document.querySelectorAll('.concept-icon'),
+        aText = document.querySelectorAll('.concept-detailed-text');
+
+    console.log(aIcon, aText)
+        for(var i=0;i<aIcon.length;i++){
+            aIcon[i].index=i;
+            aIcon[i].addEventListener('mouseover',function () {
+                var i=this.index
+                aText[i].style.opacity='1'
+            })
+            aIcon[i].addEventListener('mouseout', function () {
+                var i = this.index
+                aText[i].style.opacity = '0'
+            })
+        }
+}
+block()
