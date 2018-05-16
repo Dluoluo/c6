@@ -165,7 +165,8 @@ function ulBlock() {
         } else {
             e.stopPropagation();
         }
-        oPList.style.opacity = '1';
+        oPList.style.display="block";
+        console.log(oPList.style.display)
     }, false)
     oCity.addEventListener('click', function (e) {
         e = e || window.event;
@@ -175,12 +176,12 @@ function ulBlock() {
         } else {
             e.stopPropagation();
         }
-        oCList.style.opacity = '1';
+        oCList.style.display = "block";
     }, false)
     document.documentElement.addEventListener('click', hideFn, false);
     function hideFn(e) {
-        oPList.style.opacity = '0';
-        oCList.style.opacity = '0';
+        oPList.style.display = "none";
+        oCList.style.display = "none";
     }
     for (var i = 0; i < aPLists.length; i++) {
         aPLists[i].addEventListener('click', function () {
