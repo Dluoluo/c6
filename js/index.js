@@ -15,7 +15,7 @@ var mySwiper = new Swiper('.content-swiper', {
         //点击分页器效果
         clickable: true,
         renderBullet: function (index, className) {
-            var el = '<span class="' + className + '" style="background: url(./img/pagination-'+(index+1)+'.png) no-repeat;background-size: 200% 100%;"></span>';
+            var el = '<span class="' + className + '" style="background: url(./img/pagination-' + (index + 1) + '.png) no-repeat;background-size: 200% 100%;"></span>';
             return el;
         }
     },
@@ -76,7 +76,7 @@ var myPriceSwiper = new Swiper('.price-table-content', {
                 case 4: text = '音响/娱乐'; break;
             }
             return '<span class="' + className + '">' + text + '</span>'
-            }
+        }
     },
 
     // 如果需要滚动条
@@ -84,15 +84,15 @@ var myPriceSwiper = new Swiper('.price-table-content', {
         el: '.price-scrollbar',
         //是否允许拖动滚动条
         draggable: true,
-        
+
     },
-})  
-myPriceSwiper.scrollbar.$dragEl.css('background', '#1f4558'); 
+})
+myPriceSwiper.scrollbar.$dragEl.css('background', '#1f4558');
 //百年传承轮播
 var myHistorySwiper = new Swiper('.history-swiper', {
     // 横向
     direction: 'horizontal',
-    simulateTouch:false,
+    simulateTouch: false,
     //速度800
     speed: 800,
 
@@ -122,28 +122,77 @@ var myHistorySwiper = new Swiper('.history-swiper', {
             } else {
                 this.navigation.$nextEl.css('opacity', '1');
             }
-            if(this.activeIndex){
+            if (this.activeIndex) {
                 this.navigation.$prevEl.css('opacity', '1');
-            }else{
+            } else {
                 this.navigation.$prevEl.css('opacity', '0');
             }
         },
     }
-})   
+})
 
-function block() {
+function textBlock() {
     var aIcon = document.querySelectorAll('.concept-icon'),
         aText = document.querySelectorAll('.concept-detailed-text');
-        for(var i=0;i<aIcon.length;i++){
-            aIcon[i].index=i;
-            aIcon[i].addEventListener('mouseover',function () {
-                var i=this.index
-                aText[i].style.opacity='1'
-            })
-            aIcon[i].addEventListener('mouseout', function () {
-                var i = this.index
-                aText[i].style.opacity = '0'
-            })
-        }
+    for (var i = 0; i < aIcon.length; i++) {
+        aIcon[i].index = i;
+        aIcon[i].addEventListener('mouseover', function () {
+            var i = this.index
+            aText[i].style.opacity = '1'
+        })
+        aIcon[i].addEventListener('mouseout', function () {
+            var i = this.index
+            aText[i].style.opacity = '0'
+        })
+    }
 }
-block()
+textBlock()
+
+function ulBlock() {
+
+    var oProvince = document.querySelector('.signup-province'),
+        oCity = document.querySelector('.signup-city'),
+        oPList = document.querySelector('.signup-province-list'),
+        aPLists = oPList.querySelectorAll('input')
+        oCList = document.querySelector('.signup-city-list'),
+        aCLists = oCList.querySelectorAll('input');
+
+    oProvince.addEventListener('click', function (e) {
+        e = e || window.event;
+        if (window.event) {    //阻止事件冒泡
+            e.cancelBubble = true;
+
+        } else {
+            e.stopPropagation();
+        }
+        oPList.style.opacity = '1';
+    }, false)
+    oCity.addEventListener('click', function (e) {
+        e = e || window.event;
+        if (window.event) {    //阻止事件冒泡
+            e.cancelBubble = true;
+
+        } else {
+            e.stopPropagation();
+        }
+        oCList.style.opacity = '1';
+    }, false)
+    document.documentElement.addEventListener('click', hideFn, false);
+    function hideFn(e) {
+        oPList.style.opacity = '0';
+        oCList.style.opacity = '0';
+    }
+    for (var i = 0; i < aPLists.length; i++) {
+        aPLists[i].addEventListener('click', function () {
+            oProvince.value = this.value;
+            console.log(this)
+        }, false)
+    }
+    for (var i = 0; i < aCLists.length; i++) {
+        aCLists[i].addEventListener('click', function () {
+            oCity.value = this.value;
+            console.log(this)
+        }, false)
+    }
+}
+ulBlock()

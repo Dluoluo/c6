@@ -596,6 +596,7 @@ header{
     color: #1f4558;
 }
 .signup-province,.signup-city{
+    background:#fff url(../img/download.png)no-repeat right center;
     text-align: left;
     cursor: pointer;
 }
@@ -603,15 +604,15 @@ header{
     padding: 0;
     height: auto;
     position: absolute;
-    display: none;
+    opacity: 0;
 }
 .signup-province-list{
     top: 95%;
-    left:51.22%;
+    left:0;
 }
 .signup-city-list{
     top: 95%;
-    left:0;
+    left:51.22%;
 }
 .signup-province-list input,.signup-city-list input{
     width: 100%;
@@ -633,7 +634,7 @@ header{
     color: #1f4558;
     font-size: 16px;
     padding-left: 10px;
-    background: #fff;
+    background:#fff url(../img/download.png)no-repeat right center;
     box-sizing: border-box;
     border: none;
     text-align: left;
