@@ -92,6 +92,7 @@ myPriceSwiper.scrollbar.$dragEl.css('background', '#1f4558');
 var myHistorySwiper = new Swiper('.history-swiper', {
     // 横向
     direction: 'horizontal',
+    simulateTouch:false,
     //速度800
     speed: 800,
 
@@ -120,8 +121,6 @@ var myHistorySwiper = new Swiper('.history-swiper', {
 function block() {
     var aIcon = document.querySelectorAll('.concept-icon'),
         aText = document.querySelectorAll('.concept-detailed-text');
-
-    console.log(aIcon, aText)
         for(var i=0;i<aIcon.length;i++){
             aIcon[i].index=i;
             aIcon[i].addEventListener('mouseover',function () {

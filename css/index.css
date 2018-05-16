@@ -266,22 +266,28 @@ header{
     left:50%;
 }
 .history-page1 img{
-    margin-left: -278.5px;
+    width: 41.38%;
+    margin-left: -20.69%;
 }
 .history-page2 img{
-    margin-left: -253.5px;
+    width: 37.66%;
+    margin-left: -18.83%;
 }
 .history-page3 img{
-    margin-left: -288px;
+    width: 42.79%;
+    margin-left: -21.395%;
 }
 .history-page4 img{
-    margin-left: -324px;
+    width:48.14%;
+    margin-left: -24.07%;
 }
 .history-page5 img{
-    margin-left: -323px;
+    width: 47.99%;
+    margin-left: -23.995%;
 }
 .history-page6 img{
-    margin-left: -333px;
+    width: 49.47%;
+    margin-left: -24.735%;
 }
 .history-button-prev{
     width: 52px;
