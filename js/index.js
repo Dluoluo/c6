@@ -100,6 +100,7 @@ var myHistorySwiper = new Swiper('.history-swiper', {
         nextEl: '.history-button-prev',
         prevEl: '.history-button-next',
     },
+
     on: {
         init: function (swiper) {
             slide = this.slides.eq(0);
@@ -114,6 +115,18 @@ var myHistorySwiper = new Swiper('.history-swiper', {
         transitionEnd: function () {
             slide = this.slides.eq(this.activeIndex);
             slide.addClass('ani-slide-history');
+        },
+        slideChange: function () {
+            if (this.isEnd) {
+                this.navigation.$nextEl.css('opacity', '0');
+            } else {
+                this.navigation.$nextEl.css('opacity', '1');
+            }
+            if(this.activeIndex){
+                this.navigation.$prevEl.css('opacity', '1');
+            }else{
+                this.navigation.$prevEl.css('opacity', '0');
+            }
         },
     }
 })   

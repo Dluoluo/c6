@@ -128,6 +128,9 @@ header{
 .content-wrapper{
     transition-delay:0.5s;
 }
+.ani-opacity{
+    opacity: 0;
+}
 .content{
     flex: 1;
     overflow: hidden;
@@ -295,6 +298,10 @@ header{
     left:5.43%;
     background: url(../img/history-prev.png)no-repeat center center;
     border-radius: 50%;
+    transition: opacity 0.5s
+}
+.history-swiper .swiper-button-next.swiper-button-disabled{
+ opacity: 0;
 }
 .history-button-next{
     width: 52px;
@@ -302,6 +309,7 @@ header{
     right:2.22%;
     background: url(../img/history-next.png)no-repeat center center;
     border-radius: 50%;
+    transition: opacity 0.5s
 }
 .history-button-prev:hover,.history-button-next:hover{
     border:5px solid #1f4558;
