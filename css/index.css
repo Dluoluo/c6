@@ -10,7 +10,7 @@ body{
     flex-direction: column;
 }
 /* 公共样式 */
-.home,.comfortable,.history,.concept,.drive,.seat,.video,.signup,.price{
+.home,.comfortable,.history-swiper,.concept,.drive,.seat,.video,.signup,.price{
     width: 100%;
     height: 100%;
     position: relative;
@@ -216,8 +216,90 @@ header{
 .comfortable-img img:hover{
     transform:scale(0.8) rotateY(180deg) rotateZ(0.01deg) ;
 }
-/* 百年传承 */
 
+/* 百年传承 */
+.history-swiper .swiper-wrapper{
+    transition-delay:0.5s;
+}
+.history-swiper{
+    background: url(../img/history-bg.png)no-repeat;
+    background-size: 100% 100%;
+}
+.history-page1,.history-page2,.history-page3,.history-page4,.history-page5,.history-page6,.history-page1-text,.history-page2-text,.history-page3-text,.history-page4-text,.history-page5-text,.history-page6-text{
+    width: 100%;
+    height: 100%;
+}
+.history-page1-text,.history-page2-text,.history-page3-text,.history-page4-text,.history-page5-text,.history-page6-text{
+    transition: all 0.5s;
+    opacity: 0;
+}
+.ani-slide-history .history-page1-text,.ani-slide-history .history-page2-text,.ani-slide-history .history-page3-text,.ani-slide-history .history-page4-text,.ani-slide-history .history-page5-text,.ani-slide-history .history-page6-text{
+    opacity: 1;
+}
+.history-page1-text{
+    background: url(../img/history-text1.png) no-repeat;
+    background-size: 95% 92%;
+}
+.history-page2-text{
+    background: url(../img/history-text2.png) no-repeat;
+    background-size: 95% 92%;
+}
+.history-page3-text{
+    background: url(../img/history-text3.png) no-repeat;
+    background-size: 95% 92%;
+}
+.history-page4-text{
+    background: url(../img/history-text4.png) no-repeat;
+    background-size: 95% 92%;
+}
+.history-page5-text{
+    background: url(../img/history-text5.png) no-repeat;
+    background-size: 95% 92%;
+}
+.history-page6-text{
+    background: url(../img/history-text6.png) no-repeat;
+    background-size: 95% 92%;
+}
+.history-swiper img{
+    position: absolute;
+    top: 46.91%;
+    left:50%;
+}
+.history-page1 img{
+    margin-left: -278.5px;
+}
+.history-page2 img{
+    margin-left: -253.5px;
+}
+.history-page3 img{
+    margin-left: -288px;
+}
+.history-page4 img{
+    margin-left: -324px;
+}
+.history-page5 img{
+    margin-left: -323px;
+}
+.history-page6 img{
+    margin-left: -333px;
+}
+.history-button-prev{
+    width: 52px;
+    height: 52px;
+    left:5.43%;
+    background: url(../img/history-prev.png)no-repeat center center;
+    border-radius: 50%;
+}
+.history-button-next{
+    width: 52px;
+    height: 52px;
+    right:2.22%;
+    background: url(../img/history-next.png)no-repeat center center;
+    border-radius: 50%;
+}
+.history-button-prev:hover,.history-button-next:hover{
+    border:5px solid #1f4558;
+}
 /* 观享其悦 */
 .concept{
     background: url(../img/concept-bg.png)no-repeat;

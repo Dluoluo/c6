@@ -21,7 +21,7 @@ var mySwiper = new Swiper('.content-swiper', {
 
     // 如果需要前进后退按钮
     navigation: {
-        nextEl: '.swiper-button-next'
+        nextEl: '.button-next'
     },
     on: {
         init: function (swiper) {
@@ -38,6 +38,7 @@ var mySwiper = new Swiper('.content-swiper', {
             slide = this.slides.eq(this.activeIndex);
             slide.addClass('ani-slide');
         },
+        //向下滑动到底透明
         slideChange: function () {
             var ospan = document.querySelector('.button-next-span');
             if (this.isEnd) {
@@ -84,4 +85,30 @@ var myPriceSwiper = new Swiper('.price-table-content', {
         
     },
 })  
-myPriceSwiper.scrollbar.$dragEl.css('background', '#1f4558');  
+myPriceSwiper.scrollbar.$dragEl.css('background', '#1f4558'); 
+
+var myHistorySwiper = new Swiper('.history-swiper', {
+    direction: 'horizontal',
+    speed: 800,
+
+    navigation: {
+        nextEl: '.history-button-prev',
+        prevEl: '.history-button-next',
+    },
+    on: {
+        init: function (swiper) {
+            slide = this.slides.eq(0);
+            slide.addClass('ani-slide-history');
+        },
+        transitionStart: function () {
+            for (i = 0; i < this.slides.length; i++) {
+                slide = this.slides.eq(i);
+                slide.removeClass('ani-slide-history');
+            }
+        },
+        transitionEnd: function () {
+            slide = this.slides.eq(this.activeIndex);
+            slide.addClass('ani-slide-history');
+        },
+    }
+})   
