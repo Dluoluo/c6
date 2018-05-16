@@ -138,7 +138,7 @@ header{
 /* 首页 */
 .home{
     background: url(../img/home-bg.png) no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 104%;
 }
 .home-title{
     position: absolute;
@@ -429,6 +429,7 @@ header{
     height: 71.57%;
     top:12.52%;
     left:20.28%;
+    background: black;
 }
 
 /* 配置价格 */
@@ -523,7 +524,7 @@ header{
 .signup{
     font-size: 0;
     background:url(../img/signup-bg.png)no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 108%;
 }
 /* 报名试驾动画 */
 .signup-title{

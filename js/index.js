@@ -88,7 +88,9 @@ var myPriceSwiper = new Swiper('.price-table-content', {
 myPriceSwiper.scrollbar.$dragEl.css('background', '#1f4558'); 
 
 var myHistorySwiper = new Swiper('.history-swiper', {
+    // 横向
     direction: 'horizontal',
+    //速度800
     speed: 800,
 
     navigation: {
